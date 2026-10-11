@@ -1,5 +1,7 @@
 # Mastering TypeSafe Jev
 
+Companion Source Code repository for [Mastering TypeSafe Jev](https://mastering-jev-and-kev-book.vercel.app/) book.
+
 ![book_cover_page](images/mastering-jev-book-cover-page-small.png)
 
 **The Complete Engineering Playbook for Building AI Decision Engines with TypeSafe Jev and open-source Kev**
