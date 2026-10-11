@@ -1,0 +1,471 @@
+{
+  "version": "smartplant-scenarios/1.0.0",
+  "asset_id": "M-104",
+  "scenarios": [
+    {
+      "id": "S01",
+      "name": "Healthy motor",
+      "load": 0.7,
+      "faults": [],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "MONITOR"
+        ],
+        "urgencies": [
+          "ROUTINE"
+        ],
+        "route": "standard_cmms",
+        "critical": false,
+        "intervention": false
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S02",
+      "name": "Gradual bearing degradation",
+      "load": 0.75,
+      "faults": [
+        {
+          "mode": "gradual_degradation",
+          "start_step": 20,
+          "magnitude": 0.6
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 420,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT",
+          "SCHEDULE_MAINTENANCE"
+        ],
+        "urgencies": [
+          "PRIORITY",
+          "URGENT"
+        ],
+        "route": null,
+        "critical": false,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S03",
+      "name": "Rapid thermal spike",
+      "load": 0.8,
+      "faults": [
+        {
+          "mode": "thermal_spike",
+          "start_step": 100,
+          "magnitude": 1.15
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT",
+          "TRANSFER_LOAD",
+          "REQUEST_SHUTDOWN"
+        ],
+        "urgencies": [
+          "URGENT",
+          "CRITICAL"
+        ],
+        "route": "specialist_review",
+        "critical": true,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S04",
+      "name": "Faulty temperature sensor (dropout)",
+      "load": 0.75,
+      "faults": [
+        {
+          "mode": "sensor_dropout",
+          "start_step": 40,
+          "channel": "bearing_temp_c"
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT"
+        ],
+        "urgencies": [
+          "PRIORITY",
+          "URGENT"
+        ],
+        "route": "specialist_review",
+        "critical": false,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S05",
+      "name": "Degradation during critical production order",
+      "load": 0.9,
+      "faults": [
+        {
+          "mode": "gradual_degradation",
+          "start_step": 20,
+          "magnitude": 0.6
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "CRITICAL",
+          "hours_to_deadline": 6,
+          "required_load_pct": 0.9
+        },
+        "asset": {
+          "criticality": "A",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": null,
+          "available": false,
+          "approved_for_process": false,
+          "capacity_pct": 0.0
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT",
+          "SCHEDULE_MAINTENANCE"
+        ],
+        "urgencies": [
+          "PRIORITY",
+          "URGENT"
+        ],
+        "route": null,
+        "critical": false,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S06",
+      "name": "Severe degradation, backup available",
+      "load": 0.9,
+      "faults": [
+        {
+          "mode": "gradual_degradation",
+          "start_step": 20,
+          "magnitude": 1.0
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "HIGH",
+          "hours_to_deadline": 30,
+          "required_load_pct": 0.85
+        },
+        "asset": {
+          "criticality": "A",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.95
+        }
+      },
+      "expected": {
+        "actions": [
+          "TRANSFER_LOAD",
+          "INSPECT",
+          "SCHEDULE_MAINTENANCE"
+        ],
+        "urgencies": [
+          "URGENT",
+          "CRITICAL"
+        ],
+        "route": null,
+        "critical": true,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S07",
+      "name": "Severe degradation, backup unavailable",
+      "load": 0.9,
+      "faults": [
+        {
+          "mode": "gradual_degradation",
+          "start_step": 20,
+          "magnitude": 1.0
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "HIGH",
+          "hours_to_deadline": 30,
+          "required_load_pct": 0.85
+        },
+        "asset": {
+          "criticality": "A",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": null,
+          "available": false,
+          "approved_for_process": false,
+          "capacity_pct": 0.0
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT",
+          "SCHEDULE_MAINTENANCE",
+          "REQUEST_SHUTDOWN"
+        ],
+        "urgencies": [
+          "URGENT",
+          "CRITICAL"
+        ],
+        "route": "specialist_review",
+        "critical": true,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S08",
+      "name": "Maintenance completed, issue resolved",
+      "load": 0.75,
+      "faults": [],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 2,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "bearing replaced; vibration back to baseline"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "MONITOR"
+        ],
+        "urgencies": [
+          "ROUTINE"
+        ],
+        "route": "standard_cmms",
+        "critical": false,
+        "intervention": false
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S09",
+      "name": "Conflicting signals (temp up, vibration normal)",
+      "load": 0.75,
+      "faults": [
+        {
+          "mode": "conflicting_temp_rise",
+          "start_step": 30,
+          "magnitude": 1.0
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 200,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT"
+        ],
+        "urgencies": [
+          "PRIORITY",
+          "URGENT"
+        ],
+        "route": "specialist_review",
+        "critical": false,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11,
+      "decision_service_down": false
+    },
+    {
+      "id": "S10",
+      "name": "Decision service timeout during degradation",
+      "load": 0.75,
+      "decision_service_down": true,
+      "faults": [
+        {
+          "mode": "gradual_degradation",
+          "start_step": 20,
+          "magnitude": 0.6
+        }
+      ],
+      "context": {
+        "order": {
+          "priority": "NORMAL",
+          "hours_to_deadline": 72,
+          "required_load_pct": 0.75
+        },
+        "asset": {
+          "criticality": "B",
+          "days_since_bearing_replacement": 420,
+          "open_work_orders": 0,
+          "spare_bearing_in_stock": true,
+          "last_inspection_finding": "none"
+        },
+        "backup": {
+          "asset_id": "M-105",
+          "available": true,
+          "approved_for_process": true,
+          "capacity_pct": 0.9
+        }
+      },
+      "expected": {
+        "actions": [
+          "INSPECT",
+          "SCHEDULE_MAINTENANCE"
+        ],
+        "urgencies": [
+          "PRIORITY",
+          "URGENT"
+        ],
+        "route": "specialist_review",
+        "critical": false,
+        "intervention": true
+      },
+      "steps": 120,
+      "seed": 11
+    }
+  ]
+}

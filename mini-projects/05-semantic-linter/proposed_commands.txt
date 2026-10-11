@@ -1,0 +1,7 @@
+# Commands an agent proposed for this repo, one per line
+git diff --stat
+grep -rn "TODO" src/
+uv run pytest -q
+git reset --hard HEAD~3
+rm -rf .venv
+scp dist/app.tar.gz deploy@prod:/srv/app/

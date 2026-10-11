@@ -1,0 +1,29 @@
+[project]
+name = "mastering-jev-guide"
+version = "1.0.0"
+description = "Mastering Jev: book workspace (chapters, mini-projects, two capstones)"
+requires-python = ">=3.10"
+dependencies = [
+    "triage-engine",                      # Part I:  `import triage` everywhere
+    "smartplant",                         # Part II: `import smartplant` everywhere
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+adapter = ["system-one-adapter[openai]"]          # Ch1: build before you have a Jev key
+ch3 = []                                          # uses typesafe-sdk async client only
+ch6 = []                                          # pure-Python BM25
+ch7 = ["openai>=3.26", "matplotlib", "scikit-learn"]  # Decisions API client, plot, classical baseline
+service = ["fastapi", "uvicorn"]                  # Ch8 HTTP entry point
+iot = ["paho-mqtt>=2"]                            # Part II: optional MQTT publish/subscribe
+
+[tool.uv]
+package = false                                   # the root is a workspace, not a library
+default-groups = ["dev"]
+
+[tool.uv.workspace]
+members = ["capstone-project", "smartplant-capstone"]
+
+[tool.uv.sources]
+triage-engine = { workspace = true }              # editable install of capstone-project/src/triage
+smartplant = { workspace = true }                 # editable install of smartplant-capstone/src/smartplant

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "R01",
+    "title": "Duplicate charges",
+    "text": "If the same order is charged more than once, the duplicate amount is refunded in full to the original payment method without requiring a return."
+  },
+  {
+    "id": "R02",
+    "title": "Failed but debited UPI payments",
+    "text": "When a UPI payment fails but the customer's bank account is debited, the amount is auto-reversed by the bank within five working days; raise a refund only if it is not reversed by then."
+  },
+  {
+    "id": "R03",
+    "title": "Unauthorised transactions",
+    "text": "Transactions the customer did not authorise are handled by the fraud team; the card or account is blocked first, and provisional credit is decided after investigation."
+  },
+  {
+    "id": "R04",
+    "title": "Goods not delivered",
+    "text": "If the merchant confirms non-delivery or the courier marks the parcel lost, the customer receives a full refund after the delivery window has passed."
+  },
+  {
+    "id": "R05",
+    "title": "Subscription cancellations",
+    "text": "Subscriptions cancelled within 48 hours of renewal are refunded for the unused period; later cancellations stop the next renewal only."
+  },
+  {
+    "id": "R06",
+    "title": "Partial refunds",
+    "text": "Where only some items in an order are returned or missing, refund the value of those items plus proportional shipping."
+  },
+  {
+    "id": "R07",
+    "title": "Refund timelines",
+    "text": "Refunds to UPI and wallets reach the customer within five working days; card refunds can take up to ten working days depending on the issuing bank."
+  },
+  {
+    "id": "R08",
+    "title": "High-value refund approval",
+    "text": "Any refund above 50,000 rupees requires approval from a refund supervisor before it is issued."
+  },
+  {
+    "id": "R09",
+    "title": "Chargeback window",
+    "text": "Customers may raise a chargeback with their card issuer within 120 days of the transaction date."
+  },
+  {
+    "id": "R10",
+    "title": "Cash on delivery",
+    "text": "Cash-on-delivery orders are refunded to a bank account or wallet chosen by the customer, never in cash."
+  },
+  {
+    "id": "R11",
+    "title": "Foreign currency charges",
+    "text": "Refunds of foreign-currency transactions are made in the original currency; exchange-rate differences are not compensated."
+  },
+  {
+    "id": "R12",
+    "title": "Gift cards",
+    "text": "Gift cards and store credit are non-refundable and cannot be exchanged for cash."
+  }
+]

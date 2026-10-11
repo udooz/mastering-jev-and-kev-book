@@ -1,0 +1,5 @@
+Agent: Thanks for calling, how can I help?
+Customer: I was charged twice for order A-104, two payments of 499 rupees on Monday.
+Agent: I can see both charges. The second one is a duplicate and I will raise a refund today.
+Customer: How long will it take?
+Agent: Refunds to UPI usually reach you within five working days.

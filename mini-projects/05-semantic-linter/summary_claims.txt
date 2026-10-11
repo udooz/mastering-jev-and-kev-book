@@ -1,0 +1,1 @@
+The customer was charged twice for order A-104. Each payment was 499 rupees. The agent raised a refund for the duplicate charge. The customer asked to close their account. The duplicate charge was 999 rupees.

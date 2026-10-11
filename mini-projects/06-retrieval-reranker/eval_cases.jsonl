@@ -1,0 +1,12 @@
+{"case": "I was billed two times for one order, please return the extra amount.", "gold": "R01"}
+{"case": "My UPI payment failed but money got debited from my bank account.", "gold": "R02"}
+{"case": "Someone used my card without my permission last night.", "gold": "R03"}
+{"case": "The courier says the parcel is lost and nothing ever arrived.", "gold": "R04"}
+{"case": "I stopped my plan an hour after it auto-renewed, can I get money back?", "gold": "R05"}
+{"case": "Two of the five things I ordered were not in the box.", "gold": "R06"}
+{"case": "How long until the money shows up back on my credit card?", "gold": "R07"}
+{"case": "I need 75,000 rupees back for a returned laptop.", "gold": "R08"}
+{"case": "Can I still dispute a card transaction from four months ago with my bank?", "gold": "R09"}
+{"case": "I paid the delivery person in cash and sent the item back, how do I get my money?", "gold": "R10"}
+{"case": "I was charged in dollars on an overseas site and want it reversed.", "gold": "R11"}
+{"case": "Can I swap my unused gift card for cash?", "gold": "R12"}

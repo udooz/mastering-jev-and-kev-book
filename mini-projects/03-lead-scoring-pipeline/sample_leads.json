@@ -1,0 +1,17 @@
+[
+  {"id": "L1", "from": "cto@payflow.example",
+   "body": "Hi, we're a 300-person payments company. We need a quote for the decision API and want to start this month.\n--\nSent from my iPhone",
+   "company": {"industry": "fintech", "employees": 300}},
+  {"id": "L2", "from": "ops@mediahouse.example",
+   "body": "Interested in pricing sometime this year for our newsroom tools.",
+   "company": {"industry": "media", "employees": 40}},
+  {"id": "L3", "from": "angry@client.example",
+   "body": "Your API has been down for two hours. This is the third time this month. Fix it or we cancel.",
+   "company": {"industry": "fintech", "employees": 1200}},
+  {"id": "L4", "from": "growth@seo-agency.example",
+   "body": "Dear Sir/Madam, we can rank your website #1 on Google. Reply YES for a free audit!!!",
+   "company": {"industry": "marketing", "employees": 5}},
+  {"id": "L5", "from": "partners@bankconnect.example",
+   "body": "We integrate with 40 Indian banks and would like to explore a reseller partnership.",
+   "company": {"industry": "fintech", "employees": 150}}
+]
