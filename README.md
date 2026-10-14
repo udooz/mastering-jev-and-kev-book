@@ -306,10 +306,7 @@ testpaths = ["tests"]
 
 > Why a workspace and not `sys.path` tricks or a `src/` copy per project? The packages are installed once, in editable mode, from a single lock file. IDEs (VS Code, PyCharm) resolve `triage` and `smartplant` through the selected `.venv` interpreter, so autocomplete and type checking work in every mini-project too.
 
-## Sources and a note on numbers
-
-Prices, latencies and benchmark figures come from:
-
+## Sources and references for this book
 - TypeSafe's published material and docs
 - Flavio Copes, *A Deep Dive into Jev* (Sep 2026)
 - @0xCodila, *Jev Engineering* playbook (Sep 2026)
