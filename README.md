@@ -21,7 +21,7 @@ It isn't a survey. Every chapter ships working Python, a mini-project, and one m
 
 Two appendices explain **why** a System One model beats a regular LLM for decisions (and how Jev works inside), and summarise **both capstones' use cases** for readers who won't read the code.
 
-**At a glance:** 13 chapters + 2 appendices · 60 PlantUML diagrams (source + PNG) · 2 installable packages · 48 automated tests (+1 live eval) · 12 runnable mini-projects across both parts, with 10-minute hands-on walk-throughs in Chapters 10–13.
+**At a glance:** 13 chapters + 2 appendices · 2 installable packages · 48 automated tests (+1 live eval) · 12 runnable mini-projects across both parts, with 10-minute hands-on IoT walk-throughs in Chapters 10–13.
 
 ---
 
