@@ -16,12 +16,14 @@ It isn't a survey. Every chapter ships working Python, a mini-project, and one m
 |---|---|---|
 | Capstone | **Autonomous Incident & FinTech Triage Engine** | **SmartPlant Decision Intelligence** (Industrial IoT) |
 | Decision model | TypeSafe **Jev** (hosted API) | **Kev** ([jaredpalmer/kev](https://github.com/jaredpalmer/kev), self-hosted, open source) |
-| Chapters | 1–8 | 9–13 |
+| Chapters | 2–9 | 10–14 |
 | Package | `triage` (`capstone-project/`) | `smartplant` (`smartplant-capstone/`), reuses `triage` |
 
 Two appendices explain **why** a System One model beats a regular LLM for decisions (and how Jev works inside), and summarise **both capstones' use cases** for readers who won't read the code.
 
-**At a glance:** 13 chapters + 2 appendices · 60 PlantUML diagrams (source + PNG) · 2 installable packages · 48 automated tests (+1 live eval) · 12 runnable mini-projects across both parts, with 10-minute hands-on walk-throughs in Chapters 10–13.
+The appendix C provides overview of THX-01 model.
+
+**At a glance:** 14 chapters + 3 appendices · 2 installable packages · 48 automated tests (+1 live eval) · 12 runnable mini-projects across both parts, with 10-minute hands-on walk-throughs in Chapters 10–14.
 
 ---
 
@@ -49,20 +51,21 @@ Two appendices explain **why** a System One model beats a regular LLM for decisi
 
 ## Contents
 
-![book-flow](images/book-flow.png)
+![book-flow](images/book-flow.svg)
 
 ### Part I: FinTech triage on cloud hosted Jev
 
 | # | Chapter | You build | Capstone increment |
 |---|---|---|---|
-| 1 | [Foundations: System One AI & Decision Economics](chapters/01-foundations.md) | Multi-client starter + latency harness | `jev_client.py`: swappable decision client |
-| 2 | [The Three Primitives & Decision Contracts](chapters/02-question-primitives.md) | Support ticket evaluator | `contract.py`: the triage contract |
-| 3 | [State Engineering & Speculative Fan-Out](chapters/03-state-and-parallelism.md) | Lead / inbox qualification engine | `state_builder.py`: evidence state from raw payloads |
-| 4 | [Confidence-Gated Architecture & Routing](chapters/04-confidence-and-routing.md) | Chief-of-Staff task router | `policy_engine.py` + `trace.py`: bands, gates, decision trace |
-| 5 | [Failure Modes, Limits & Safety Verification](chapters/05-limits-and-verification.md) | Semantic linter & safety gate | `resilience.py` + labeled evals |
-| 6 | [Agentic Control Layers & Integrations](chapters/06-agentic-harnesses.md) | BM25 + Jev re-ranker | `executors.py` + `verifier.py` + `tool_guard.py`: the closed loop |
-| 7 | [Alternatives & Benchmarks](chapters/07-alternatives-and-benchmarks.md) | Benchmark harness: Jev vs Kev vs OpenAI Decisions | `cascade.py` + engine decision record |
-| 8 | [Capstone: The Triage Engine, End to End](chapters/08-capstone.md) | Full service, tests, rollout plan | `engine.py`, `wiring.py`, `service.py` |
+| 1 | [Introduction] | This map, plus a working environment | A shared `uv` workspace |
+| 2 | [Foundations: System One AI & Decision Economics] | Multi-client starter + latency harness | `jev_client.py`: swappable decision client |
+| 3 | [The Three Primitives & Decision Contracts] | Support ticket evaluator | `contract.py`: the triage contract |
+| 4 | [State Engineering & Speculative Fan-Out] | Lead / inbox qualification engine | `state_builder.py`: evidence state from raw payloads |
+| 5 | [Confidence-Gated Architecture & Routing] | Chief-of-Staff task router | `policy_engine.py` + `trace.py`: bands, gates, decision trace |
+| 6 | [Failure Modes, Limits & Safety Verification] | Semantic linter & safety gate | `resilience.py` + labeled evals |
+| 7 | [Agentic Control Layers & Integrations] | BM25 + Jev re-ranker | `executors.py` + `verifier.py` + `tool_guard.py`: the closed loop |
+| 8 | [Alternatives & Benchmarks] | Benchmark harness: Jev vs Kev vs OpenAI Decisions | `cascade.py` + engine decision record |
+| 9 | [Capstone: The Triage Engine, End to End] | Full service, tests, rollout plan | `engine.py`, `wiring.py`, `service.py` |
 
 ### Part II: SmartPlant on self-hosted Kev
 
@@ -70,28 +73,29 @@ Same `DecisionClient`, same circuit breaker, a new domain, and a decision model 
 
 | # | Chapter | Mini-project | SmartPlant increment |
 |---|---|---|---|
-| 9 | [Open-Source Kev & Industrial IoT Architecture](chapters/09-kev-and-iiot-architecture.md) | `08-iot-sensor-simulator` | `KevDecisionClient`, simulator, fault injection, edge snapshots |
-| 10 | [Industrial Decision Modeling with Kev Primitives](chapters/10-industrial-decision-modeling.md) | `09-smartplant-decision-service` | Contract, MES/CMMS enrichment, decision service, safety floor |
-| 11 | [Execution, Human-in-the-Loop & Safety Boundaries](chapters/11-execution-hitl-safety.md) | `10-closed-loop-controller` | Approvals, idempotent work orders, audit chain, fallbacks |
-| 12 | [Scenario Evaluation & Benchmark Suite](chapters/12-scenario-evaluation.md) | `11-smartplant-eval-suite` | Rules vs LLM vs Kev on 10 scenarios, metrics, dashboard |
-| 13 | [Capstone: SmartPlant End to End](chapters/13-smartplant-capstone.md) | — | Edge deployment, security zones, governance, fine-tuning Kev from the audit trail |
+| 10 | [Open-Source Kev & Industrial IoT Architecture] | `08-iot-sensor-simulator` | `KevDecisionClient`, simulator, fault injection, edge snapshots |
+| 11 | [Industrial Decision Modeling with Kev Primitives] | `09-smartplant-decision-service` | Contract, MES/CMMS enrichment, decision service, safety floor |
+| 12 | [Execution, Human-in-the-Loop & Safety Boundaries] | `10-closed-loop-controller` | Approvals, idempotent work orders, audit chain, fallbacks |
+| 13 | [Scenario Evaluation & Benchmark Suite] | `11-smartplant-eval-suite` | Rules vs LLM vs Kev on 10 scenarios, metrics, dashboard |
+| 14 | [Capstone: SmartPlant End to End] | — | Edge deployment, security zones, governance, fine-tuning Kev from the audit trail |
 
 ### Appendices
 
 | | Appendix | What you get |
 |---|---|---|
-| A | [Why Jev or Kev Instead of a Regular LLM, and How Decision Engines Work Inside](chapters/appendix-a-why-system-one.md) | LLM vs decision-engine matrix; OpenDecision, Jev and Kev architectures, each labelled published / contract / inferred; side-by-side comparison; where the engine sits in SmartPlant; an engine evaluation plan; what each trait means for your code; `triage.probes` to test order sensitivity, question isolation, option interaction and fan-out latency on **your** backend |
-| B | [The Two Capstones: Use Cases at a Glance](chapters/appendix-b-capstone-use-cases.md) | Side-by-side comparison; problem, actors, use-case diagrams, conceptual models, end-to-end journeys and success measures for both capstones; the shared six-step pattern; a checklist for choosing your own use case |
+| A | [Why Jev or Kev Instead of a Regular LLM, and How Decision Engines Work Inside] | LLM vs decision-engine matrix; OpenDecision, Jev and Kev architectures, each labelled published / contract / inferred; side-by-side comparison; where the engine sits in SmartPlant; an engine evaluation plan; what each trait means for your code; `triage.probes` to test order sensitivity, question isolation, option interaction and fan-out latency on **your** backend |
+| B | [The Two Capstones: Use Cases at a Glance] | Side-by-side comparison; problem, actors, use-case diagrams, conceptual models, end-to-end journeys and success measures for both capstones; the shared six-step pattern; a checklist for choosing your own use case |
+| C | [Dynamic Pricing for Packaged Food with THX-01] | Quick overview of HAL-X AI decision model with 322 million parameters, an mmBERT-base encoder, and an Apache-2.0 license. It supports Choice, Noul, and Score, plus source-number lookup, verbatim excerpts, and supporting citations|
 
 ### Suggested reading paths
 
 | You are… | Read |
 |---|---|
-| New to System One models | Appendix A §A.1–A.2 → Ch 1–4 → Appendix B |
-| Building a hosted-API decision service | Part I in order (Ch 1–8) |
-| Working in manufacturing / OT, or data must stay on-site | Ch 1–2 (client + primitives) → Part II (Ch 9–13) |
-| Architect or reviewer | Appendix B → Ch 8 → Ch 13 → Appendix A §A.3–A.10 |
-| Choosing between Jev, Kev, OpenDecision, an LLM or rules | Appendix A → Ch 7 → Ch 12 |
+| New to System One models | Appendix A §A.1–A.2 → Ch 2–5 → Appendix B |
+| Building a hosted-API decision service | Part I in order (Ch 2–9) |
+| Working in manufacturing / OT, or data must stay on-site | Ch 2–3 (client + primitives) → Part II (Ch 10–14) |
+| Architect or reviewer | Appendix B → Ch 9 → Ch 14 → Appendix A §A.3–A.10 |
+| Choosing between Jev, Kev, OpenDecision, an LLM or rules | Appendix A → Ch 8 → Ch 13 |
 
 ---
 
@@ -101,7 +105,7 @@ Part I (Chapter 1 to 8) does not require GPU machines.  You can run on a standar
 
 Part II needs GPU machine for Kev.
 
-You can buy Cloud GPU machine from https://www.runpod.io/.  You can use RTX 4090 Pod with 100GB Network storage disk. 
+You can buy Cloud GPU machine from [https://www.runpod.io/](https://www.runpod.io/).  You can use RTX 4090 Pod with 100GB Network storage disk. 
 
 ![RunPod.io 1](images/runpodio_1.png)
 ![RunPod.io 2](images/runpodio_2.png)
@@ -308,7 +312,7 @@ testpaths = ["tests"]
 
 ## Sources and a note on numbers
 
-Prices, latencies and benchmark figures come from:
+TypeSafe Jev engineering, theory, concepts, prices, latencies and benchmark figures come from:
 
 - TypeSafe's published material and docs
 - Flavio Copes, *A Deep Dive into Jev* (Sep 2026)
@@ -318,4 +322,4 @@ Prices, latencies and benchmark figures come from:
 - Archer Hume, *Jev's Architecture Unmasked* (17 Sep 2026, Appendix A), a black-box study whose architectural claims are inferences, labelled as such
 - the deepanwadhwa/OpenDecision README and the *Decision Systems Architecture: OpenDecision, Jev, Kev* brief (Appendix A)
 
-Vendors report their best cases, and Kev is a young, fast-moving project, so check its README before relying on model names or flags. The OpenAI Decisions API is in public beta, so re-check its schema and prices at GA. Every chapter includes a harness so you can measure on your own traffic, and your own measurements are the only numbers to put in a design doc.
+Trademarks. TypeSafe, Jev, Kev, OpenAI and other product names, articles belong to their respective owners and are used here only to identify those products. This book isn't affiliated with or endorsed by any of them.
