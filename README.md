@@ -1,6 +1,6 @@
 # Mastering TypeSafe Jev
 
-Companion Source Code repository for [Mastering TypeSafe Jev](https://mastering-jev-and-kev-book.vercel.app/) book.
+Companion Source Code repository for [Mastering TypeSafe Jev](https://books.sheikaxis.com/mastering-jev) book.
 
 ![book_cover_page](images/mastering-jev-book-cover-page-small.png)
 
